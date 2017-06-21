@@ -1,8 +1,8 @@
 <template>
   <div>
     <panel title="Transform" type="primary">
-      <button value="Rotate" @click.native="rotate" type="primary" size="middle"></button>
-      <button value="Scale" @click.native="scale" type="primary" size="middle" style="margin-top:12px;"></button>
+      <text value="Rotate" @click="rotate" style="font-size:30"></text>
+      <button value="Scale" @click.native="scale"  size="middle" style="margin-top:12px;"></button>
       <button value="Translate" @click.native="translate" type="primary" size="middle"
                  style="margin-top:12px;"></button>
       <button value="Transform" @click.native="transform" type="success" size="middle"

@@ -35,6 +35,16 @@
     </wxc-panel>
 
     <wxc-panel title="align-items" type="primary">
+      <div class="row row-align" style="align-items: flex-start;flex-wrap:wrap">
+        <style-item style="margin-left:10;"></style-item>
+        <style-item style="margin-left:10;" type="1"></style-item>
+        <style-item style="margin-left:10;"></style-item>
+        <style-item style="margin-left:10;width: 120px" type="1"></style-item>
+        <style-item style="margin-left:10;"></style-item>
+        <style-item style="margin-left:10;" type="1"></style-item>
+        <style-item style="margin-left:10;"></style-item>
+        <style-item style="margin-left:10;" type="1"></style-item>
+      </div>
       <div class="row row-align" style="align-items: flex-start">
         <style-item style="margin-right:0;"></style-item>
         <style-item style="margin-right:0;" type="1"></style-item>

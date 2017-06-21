@@ -528,6 +528,7 @@ public class WXSDKEngine {
   }
   public static void reload(final Context context, boolean remoteDebug) {
    reload(context,null,remoteDebug);
+
   }
 
   public static void reload() {

@@ -51,7 +51,7 @@ public class WXDebugTool {
       }
     }
   }
-  public static void connect(String debugUrl){
+  public static void conect(String debugUrl){
     WXWebSocketManager.getInstance().connect(debugUrl);
   }
   public static void close(){

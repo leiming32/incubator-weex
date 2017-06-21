@@ -1,19 +1,19 @@
 <template>
   <scroller>
     <panel title="Countdown" type="primary">
-      <countdown
-        @tick="tick($event, 'countdown1')"
-        :remain="countdown1.remain"
-        style="width: 750; margin-top: 20; margin-bottom: 20;">
-        <text class="ctno1">{{countdown1.time.D}}</text>
-        <text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">day(s)</text>
-        <text class="ctno1">{{countdown1.time.hh}}</text>
-        <text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">hour(s)</text>
-        <text class="ctno1">{{countdown1.time.mm}}</text>
-        <text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">minute(s)</text>
-        <text class="ctno1">{{countdown1.time.ss}}</text>
-        <text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">second(s)</text>
-      </countdown>
+      <!--<countdown-->
+        <!--@tick="tick($event, 'countdown1')"-->
+        <!--:remain="countdown1.remain"-->
+        <!--style="width: 750; margin-top: 20; margin-bottom: 20;">-->
+        <!--<text class="ctno1">{{countdown1.time.D}}</text>-->
+        <!--<text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">day(s)</text>-->
+        <!--<text class="ctno1">{{countdown1.time.hh}}</text>-->
+        <!--<text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">hour(s)</text>-->
+        <!--<text class="ctno1">{{countdown1.time.mm}}</text>-->
+        <!--<text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">minute(s)</text>-->
+        <!--<text class="ctno1">{{countdown1.time.ss}}</text>-->
+        <!--<text class="ctno1" style="background-color: #FFFFFF; color: #AAAAAA;">second(s)</text>-->
+      <!--</countdown>-->
 
       <countdown
         @tick="tick($event, 'countdown2')"
