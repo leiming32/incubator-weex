@@ -390,8 +390,6 @@
 				TargetAttributes = {
 					775BEE7A1C1E8ECC008D1629 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 8AL96H4FS4;
-						ProvisioningStyle = Automatic;
 					};
 					775BEE931C1E8ECC008D1629 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -469,7 +467,7 @@
 		};
 		74CC7A221C2C13BF00829368 /* Start Samples */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
@@ -479,7 +477,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DEST=$CONFIGURATION_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\n\nif [[ \"$CONFIGURATION\" = \"Debug\" && \"$PLATFORM_NAME\" != \"iphonesimulator\" ]]; then\nipconfig getifaddr en0 | awk '{printf(\"%s\",$0)}' > \"$DEST/localServer-ip.txt\"\nfi\n\nset -x\n\n#if nc -w 5 -z localhost 12580 ; then\n#    echo \"Port 12580 already in use, server is running\"\n#else\n#    open -a Terminal \"$SRCROOT/../../start\"\n#fi\n\n";
+			shellScript = "DEST=$CONFIGURATION_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\n\nif [[ \"$CONFIGURATION\" = \"Debug\" && \"$PLATFORM_NAME\" != \"iphonesimulator\" ]]; then\nipconfig getifaddr en0 | awk '{printf(\"%s\",$0)}' > \"$DEST/localServer-ip.txt\"\nfi\n\nset -x\n\nif nc -w 5 -z localhost 12580 ; then\n    echo \"Port 12580 already in use, server is running\"\nelse\n    if [ $BUILD_ENV = \"macaca\" ];then\n        echo \"you define auto test\"\n    else\n        open -a Terminal \"$SRCROOT/../../start\"\n    fi\nfi\n\n";
 		};
 		84361D271CA10F8E00F43825 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -709,7 +707,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8AL96H4FS4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -724,7 +722,7 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lm.weex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -738,8 +736,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8AL96H4FS4;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,7 +752,7 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lm.weex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
