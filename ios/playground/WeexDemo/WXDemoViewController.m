@@ -25,8 +25,10 @@
 #import <WeexSDK/WXSDKManager.h>
 #import "UIViewController+WXDemoNaviBar.h"
 #import "DemoDefine.h"
-#import "WXPrerenderManager.h"
-#import "WXMonitor.h"
+//#import "WXPrerenderManager.h"
+//#import <WeexSDK/WXPrerenderManager.h>
+#import <WeexSDK/WXMonitor.h>
+//#import "WXMonitor.h"
 
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
@@ -114,9 +116,9 @@
     CGFloat width = self.view.frame.size.width;
     [_instance destroyInstance];
     _instance = [[WXSDKInstance alloc] init];
-    if([WXPrerenderManager isTaskExist:[self.url absoluteString]]){
-        _instance = [WXPrerenderManager instanceFromUrl:self.url.absoluteString];
-    }
+//    if([WXPrerenderManager isTaskExist:[self.url absoluteString]]){
+//        _instance = [WXPrerenderManager instanceFromUrl:self.url.absoluteString];
+//    }
     
     _instance.viewController = self;
     _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);
@@ -156,14 +158,14 @@
         WXLogError(@"error: render url is nil");
         return;
     }
-    if([WXPrerenderManager isTaskExist:[self.url absoluteString]]){
-        WX_MONITOR_INSTANCE_PERF_START(WXPTJSDownload, _instance);
-        WX_MONITOR_INSTANCE_PERF_END(WXPTJSDownload, _instance);
-        WX_MONITOR_INSTANCE_PERF_START(WXPTFirstScreenRender, _instance);
-        WX_MONITOR_INSTANCE_PERF_START(WXPTAllRender, _instance);
-        [WXPrerenderManager renderFromCache:[self.url absoluteString]];
-        return;
-    }
+//    if([WXPrerenderManager isTaskExist:[self.url absoluteString]]){
+//        WX_MONITOR_INSTANCE_PERF_START(WXPTJSDownload, _instance);
+//        WX_MONITOR_INSTANCE_PERF_END(WXPTJSDownload, _instance);
+//        WX_MONITOR_INSTANCE_PERF_START(WXPTFirstScreenRender, _instance);
+//        WX_MONITOR_INSTANCE_PERF_START(WXPTAllRender, _instance);
+//        [WXPrerenderManager renderFromCache:[self.url absoluteString]];
+//        return;
+//    }
     NSURL *URL = [self testURL: [self.url absoluteString]];
     NSString *randomURL = [NSString stringWithFormat:@"%@%@random=%d",URL.absoluteString,URL.query?@"&":@"?",arc4random()];
     [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@"bundleUrl":URL.absoluteString} data:nil];
